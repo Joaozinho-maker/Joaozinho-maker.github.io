@@ -16,7 +16,50 @@
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
 }
+/* Estilos para o cabeçalho e menu */
+.main-header {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    position: fixed; /* Deixa o cabeçalho fixo no topo ao rolar */
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000; /* Garante que o cabeçalho fique por cima de outros elementos */
+}
 
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover {
+    opacity: 0.8;
+}
+
+body {
+    padding-top: 6rem; /* Garante que o conteúdo não fique escondido */
+}
 /* Estilo para o corpo da página */
 body {
     font-family: var(--font-body);
@@ -184,4 +227,114 @@ h2 {
     margin-top: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+/* Otimizações para telas menores (celulares) */
+.logo img {
+    height: 100px !important; 
+    width: auto;
+}
+
+/* Tamanho do logo no celular */
+@media (max-width: 767px) {
+    .logo img {
+        height: 95px !important;
+    }
+}
+@media (max-width: 767px) {
+ /* --- Estilos do Cabeçalho para Desktop --- */
+.main-header {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover {
+    opacity: 0.8;
+}
+
+/* Esconde o menu hambúrguer no desktop */
+.hamburger {
+    display: none;
+}
+
+/* --- Estilos para Celular (Mobile) --- */
+@media (max-width: 767px) {
+    .header-container {
+        justify-content: space-between;
+    }
+
+    /* Mostra o botão do menu hambúrguer no celular */
+    .hamburger {
+        display: block;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Esconde o menu na tela e o posiciona para deslizar da direita */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Move o menu para fora da tela */
+        width: 70%;
+        height: 100vh;
+        background-color: var(--primary-color);
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+        padding-top: 5rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: left;
+        padding: 0 2rem;
+        gap: 2rem;
+    }
+
+    .main-nav.active {
+        right: 0; /* Desliza o menu de volta para a tela */
+    }
+}
+    /* Garante que o tamanho do logo será aplicado */
+
 }
