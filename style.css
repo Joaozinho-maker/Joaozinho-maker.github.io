@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 /* Resete básico para remover estilos padrão dos navegadores */
-* {
+* 
+
+  
+{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,6 +12,7 @@
 /* Definindo variáveis CSS para cores e fontes.
   Isso facilita a alteração do tema do site.
 */
+
 :root {
     --primary-color: #b89cff; 
     --secondary-color: #8ae9ff; 
